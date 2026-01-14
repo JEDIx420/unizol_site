@@ -1,4 +1,3 @@
-import './style.css';
 import { setupChat } from './chat.js';
 
 
