@@ -2,6 +2,9 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
     server: {
+        watch: {
+            ignored: ['**/.env', '**/vite.config.js'],
+        },
         proxy: {
             '/api': {
                 target: 'http://localhost:3000',
