@@ -4,6 +4,11 @@ import { setupChat } from './chat.js';
 // Initialize Chat Widget
 setupChat(document.body);
 
+// Inject Aesthetic Scroll Blur
+const blurStrip = document.createElement('div');
+blurStrip.className = 'top-scroll-blur';
+document.body.prepend(blurStrip);
+
 // Global Interactivity (e.g. Navigation active states)
 document.addEventListener('DOMContentLoaded', () => {
   const currentPath = window.location.pathname;

@@ -208,6 +208,25 @@ section {
   padding: 5rem 0;
 }
 
+/* Aesthetic Scroll Blur */
+.top-scroll-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  /* Overlap navbar area */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999;
+  /* Below navbar (1000) but above content */
+  pointer-events: none;
+  /* Let clicks pass through */
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
