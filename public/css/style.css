@@ -367,6 +367,12 @@ section {
 
 #word-rotator {
   display: inline-block;
+  min-width: 180px;
+  /* Calculated for "Solutions" at 3rem */
+  text-align: left;
+  /* Keep start position fixed */
+  margin-left: 0.2em;
+  /* Ensure gap between static and rotating text */
   transition: opacity 0.4s ease, transform 0.4s ease;
   color: var(--color-primary);
 }
