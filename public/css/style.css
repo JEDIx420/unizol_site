@@ -1180,6 +1180,10 @@ section {
     padding: 5rem 0;
   }
 
+  .detail-visual {
+    display: none !important;
+  }
+
   .visual-inner {
     max-width: 300px !important;
     height: 250px !important;
