@@ -359,8 +359,8 @@ section {
 }
 
 .hero h1 {
-  font-size: 4.5rem;
-  /* Large size like ZenRev */
+  font-size: 3.5rem;
+  /* Reduced from 4.5rem to prevent wrapping */
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
 }
