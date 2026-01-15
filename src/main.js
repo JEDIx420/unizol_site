@@ -64,6 +64,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.animate-fade-up').forEach(el => observer.observe(el));
 
+  // Hero Word Rotator
+  const words = ["Solutions", "Agents", "SDR", "Marketer", "Orchestrator", "Employee"];
+  let wordIndex = 0;
+  const wordRotator = document.getElementById('word-rotator');
 
+  if (wordRotator) {
+    setInterval(() => {
+      // Fade out
+      wordRotator.classList.add('word-fade-out');
+
+      setTimeout(() => {
+        // Change text
+        wordIndex = (wordIndex + 1) % words.length;
+        wordRotator.textContent = words[wordIndex];
+
+        // Reset and Fade in
+        wordRotator.classList.remove('word-fade-out');
+        wordRotator.classList.add('word-fade-in');
+
+        // Cleanup after fade in animation
+        setTimeout(() => {
+          wordRotator.classList.remove('word-fade-in');
+        }, 400);
+      }, 400);
+    }, 3000);
+  }
 });
 

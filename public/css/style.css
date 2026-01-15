@@ -365,6 +365,24 @@ section {
   letter-spacing: -0.02em;
 }
 
+#word-rotator {
+  display: inline-block;
+  min-width: 250px;
+  /* Prevent layout shift for "Orchestrator" */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  color: var(--color-primary);
+}
+
+.word-fade-out {
+  opacity: 0;
+  transform: translateY(-15px);
+}
+
+.word-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero-subtext {
   font-size: 1.25rem;
   color: var(--color-text-muted);
