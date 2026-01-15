@@ -1314,6 +1314,10 @@ section {
 /* Pulsing Heart Micro-animation */
 .pulsing-heart {
   display: inline-block;
+  color: #ef4444;
+  /* Solid vibrant red */
+  vertical-align: middle;
+  margin-left: 0.2rem;
   animation: heartPulse 2s ease-in-out infinite;
   filter: drop-shadow(0 0 0px rgba(239, 68, 68, 0));
 }
