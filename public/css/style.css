@@ -1310,3 +1310,32 @@ section {
   color: var(--color-primary) !important;
   font-weight: 600;
 }
+
+/* Pulsing Heart Micro-animation */
+.pulsing-heart {
+  display: inline-block;
+  animation: heartPulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 0px rgba(239, 68, 68, 0));
+}
+
+@keyframes heartPulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(239, 68, 68, 0));
+  }
+
+  15% {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
+  }
+
+  30% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(239, 68, 68, 0));
+  }
+
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(239, 68, 68, 0));
+  }
+}
