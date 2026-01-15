@@ -217,15 +217,15 @@ section {
   width: 100%;
   height: 80px;
   /* Overlap navbar area */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 999;
   /* Below navbar (1000) but above content */
   pointer-events: none;
   /* Let clicks pass through */
-  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
 /* Navbar */
@@ -563,9 +563,11 @@ section {
 
   /* Navbar Fixes */
   .navbar {
-    width: 95%;
-    padding: 0.75rem 1rem;
-    top: 1rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.75rem 1.25rem;
+    top: 0;
+    border-radius: 0 0 12px 12px;
   }
 
   .navbar-content {
