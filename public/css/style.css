@@ -808,7 +808,13 @@ section {
   }
 }
 
-
+/* Detail Features */
+.detail-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  list-style: none;
+}
 
 /* Process Section */
 .process-section {
