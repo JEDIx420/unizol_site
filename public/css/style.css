@@ -1389,7 +1389,8 @@ section {
   /* Explicit layering */
 
   /* Dimensions & Spacing */
-  min-height: 450px;
+  min-height: 600px;
+  /* Increased height to ensure full coverage */
   margin-bottom: 6rem;
   /* Spacing below to allow scrolling time */
   padding: 4rem;
