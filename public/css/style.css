@@ -1753,72 +1753,109 @@ section {
 }
 
 /* --- Mobile Responsive --- */
+/* --- Mobile Responsive --- */
 @media (max-width: 992px) {
   .elastic-section {
-    padding: 6rem 1.5rem;
+    padding: 4rem 0;
+    /* Full width scroll, less vertical padding */
     height: auto;
     min-height: auto;
+    overflow: hidden;
+    /* Prevent horizontal scroll on body */
   }
 
   .elastic-container {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    /* Horizontal layout */
+    overflow-x: auto;
+    /* Scrollable */
+    scroll-snap-type: x mandatory;
+    /* Snap effect */
+    gap: 1.5rem;
+    padding: 0 1.5rem 2rem 1.5rem;
+    /* Padding for scroll hints */
     height: auto;
-    gap: 1rem;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scroll on iOS */
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+  }
+
+  .elastic-container::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar Chrome/Safari */
   }
 
   .elastic-card {
-    height: 100px;
+    min-width: 85vw;
+    /* Card takes up most of screen */
+    height: auto;
+    min-height: 450px;
+    /* Fixed height for consistency */
     flex: none;
-    border-radius: 20px;
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    border-radius: 24px;
+    scroll-snap-align: center;
+    /* Center snap */
     background: white;
-    overflow: hidden;
-    /* Ensure content doesn't bleed */
     position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-right: 0;
+    overflow: hidden;
   }
 
-  /* Active State (Expanded) */
+  /* Disable Active State Expansion Logic on Mobile */
   .elastic-card.active {
     height: auto;
-    min-height: 500px;
+    min-height: 450px;
     flex: none;
   }
 
-  /* Card Number: Visible when Collapsed */
+  /* Hide Large Number on Mobile (Content always visible) */
   .card-number {
-    font-size: 3rem;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.3;
-    transition: all 0.3s ease;
+    display: none;
   }
 
-  /* Hide Number when Active */
-  .elastic-card.active .card-number {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
-  }
-
-  /* Content: Hidden when Collapsed */
+  /* Content Always Visible */
   .elastic-content {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    padding: 2rem;
-    position: relative;
-    /* Reset position for mobile flow if needed, but absolute is fine inside relative card */
-  }
-
-  /* Content: Visible when Active */
-  .elastic-card.active .elastic-content {
     opacity: 1;
     visibility: visible;
-    transition-delay: 0.2s;
-    /* Wait for expansion */
+    padding: 2.5rem;
+    position: relative;
+    transform: none;
   }
 
   .elastic-info h3 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+    white-space: normal;
+    /* Allow wrapping */
   }
+
+  /* Override any hidden details logic */
+  .elastic-details {
+    opacity: 1;
+    max-height: none;
+    transform: none;
+    visibility: visible;
+    margin-top: 1rem;
+  }
+}
+
+padding: 2rem;
+position: relative;
+/* Reset position for mobile flow if needed, but absolute is fine inside relative card */
+}
+
+/* Content: Visible when Active */
+.elastic-card.active .elastic-content {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.2s;
+  /* Wait for expansion */
+}
+
+.elastic-info h3 {
+  font-size: 1.8rem;
+}
 }
