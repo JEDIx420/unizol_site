@@ -1550,19 +1550,24 @@ section {
 
 /* --- Collapsed Sequence Number --- */
 .card-number {
-  font-size: 3.5rem;
+  font-size: 8rem;
   font-weight: 800;
   color: var(--color-primary);
-  opacity: 0.15;
-  transition: all 0.5s ease;
+  /* Blue 600 */
+  opacity: 1;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
   pointer-events: none;
+  transition: all 0.4s ease;
+  line-height: 1;
 }
 
 .elastic-card.active .card-number {
   opacity: 0;
-  transform: scale(0.8) translateY(-20px);
+  transform: translate(-50%, -50%) scale(0.5);
 }
 
 /* Mouse Spotlight Effect */
@@ -1592,17 +1597,26 @@ section {
   flex-direction: column;
   justify-content: flex-end;
   z-index: 2;
+
+  /* Hidden by default (Collapsed) */
   opacity: 0;
   visibility: hidden;
   transform: translateX(20px);
-  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  background: linear-gradient(to top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0) 100%);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  background: linear-gradient(to top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0) 100%);
 }
 
 .elastic-card.active .elastic-content {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
+  transition-delay: 0.1s;
+  /* Slight delay to allow number to fade out */
+}
+
+/* Ensure no other elements leak through in collapsed state */
+.elastic-card:not(.active) .elastic-content * {
+  pointer-events: none;
 }
 
 .elastic-icon-wrapper {
@@ -1620,7 +1634,7 @@ section {
 }
 
 .elastic-card:hover .elastic-icon-wrapper {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.05) rotate(3deg);
   background-color: var(--color-primary);
   color: white;
 }
@@ -1730,6 +1744,15 @@ section {
 
   .card-number {
     font-size: 2.5rem;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.3;
+  }
+
+  .elastic-card.active .card-number {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5);
   }
 
   .elastic-content {
@@ -1737,6 +1760,10 @@ section {
     background: white;
     position: relative;
     height: auto;
+    opacity: 1;
+    /* Always visible on mobile active/hover due to height expansion */
+    visibility: visible;
+    transform: none;
   }
 
   .elastic-info h3 {
