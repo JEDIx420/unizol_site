@@ -1383,8 +1383,8 @@ section {
 .stack-card {
   /* CORE MECHANIC: Creates the stack effect */
   position: sticky;
-  top: calc(120px + (var(--i) * 3rem));
-  /* Increased offset for differentiation */
+  top: 150px;
+  /* Fixed top position for flush stacking */
   z-index: calc(10 + var(--i));
   /* Explicit layering */
 
