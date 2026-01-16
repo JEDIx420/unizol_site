@@ -1490,21 +1490,25 @@ section {
 
 /* --- Elastic Accordion Section --- */
 .elastic-section {
-  padding: 8rem 1.5rem;
+  padding: 0 1.5rem;
   background-color: var(--color-bg-light);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* Viewport Fit */
+  overflow: hidden;
 }
 
 .elastic-container {
   display: flex;
   width: 100%;
-  max-width: 1200px;
-  height: 600px;
-  /* Fixed height for stability */
+  max-width: 1300px;
+  height: 60vh;
+  /* Container Scaling */
   gap: 1.5rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 /* --- The Card --- */
@@ -1515,20 +1519,50 @@ section {
   height: 100%;
   border-radius: 32px;
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
   overflow: hidden;
   cursor: pointer;
-  transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* --- Active / Hover State --- */
-.elastic-card:hover,
+/* --- ONLY the Active card expands --- */
 .elastic-card.active {
-  flex: 4;
-  /* Grow significantly */
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.08);
+  flex: 5;
+  /* Expands significantly */
+  box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.1);
   border-color: var(--color-primary);
+  background: #ffffff;
+}
+
+/* Inactive card states - Dim and centered number */
+.elastic-card:not(.active) {
+  background: #fdfdfd;
+}
+
+.elastic-card:not(.active):hover {
+  background: #ffffff;
+  border-color: rgba(37, 99, 235, 0.1);
+}
+
+/* --- Collapsed Sequence Number --- */
+.card-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  opacity: 0.15;
+  transition: all 0.5s ease;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.elastic-card.active .card-number {
+  opacity: 0;
+  transform: scale(0.8) translateY(-20px);
 }
 
 /* Mouse Spotlight Effect */
@@ -1540,7 +1574,7 @@ section {
   width: 100%;
   height: 100%;
   background: radial-gradient(800px circle at var(--x, 50%) var(--y, 50%),
-      rgba(37, 99, 235, 0.06),
+      rgba(37, 99, 235, 0.05),
       transparent 40%);
   z-index: 1;
   pointer-events: none;
@@ -1549,7 +1583,7 @@ section {
 /* --- Content Layout --- */
 .elastic-content {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -1558,21 +1592,31 @@ section {
   flex-direction: column;
   justify-content: flex-end;
   z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(20px);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   background: linear-gradient(to top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0) 100%);
+}
+
+.elastic-card.active .elastic-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
 }
 
 .elastic-icon-wrapper {
   width: 72px;
   height: 72px;
-  background-color: rgba(37, 99, 235, 0.05);
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: white;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  transition: all 0.4s ease;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
 }
 
 .elastic-card:hover .elastic-icon-wrapper {
@@ -1582,7 +1626,7 @@ section {
 }
 
 .elastic-info h3 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--color-text);
   margin-bottom: 1rem;
@@ -1613,8 +1657,8 @@ section {
   color: var(--color-text-muted);
   line-height: 1.7;
   margin-bottom: 2rem;
-  max-width: 500px;
-  font-size: 1.125rem;
+  max-width: 550px;
+  font-size: 1.15rem;
 }
 
 .elastic-features {
@@ -1630,6 +1674,7 @@ section {
   color: var(--color-text);
   margin-bottom: 0.75rem;
   font-weight: 500;
+  font-size: 1.1rem;
 }
 
 .elastic-features i {
@@ -1642,10 +1687,11 @@ section {
   gap: 0.6rem;
   background-color: var(--color-text);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.1rem 2.2rem;
   border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
 }
 
@@ -1653,10 +1699,17 @@ section {
   background-color: var(--color-primary);
   gap: 1rem;
   transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
 }
 
 /* --- Mobile Responsive --- */
 @media (max-width: 992px) {
+  .elastic-section {
+    padding: 6rem 1.5rem;
+    height: auto;
+    min-height: auto;
+  }
+
   .elastic-container {
     flex-direction: column;
     height: auto;
@@ -1664,15 +1717,19 @@ section {
   }
 
   .elastic-card {
-    height: 140px;
+    height: 100px;
     flex: none;
-    border-radius: 24px;
+    border-radius: 20px;
   }
 
   .elastic-card:hover,
   .elastic-card.active {
     height: auto;
     min-height: 500px;
+  }
+
+  .card-number {
+    font-size: 2.5rem;
   }
 
   .elastic-content {
@@ -1683,6 +1740,6 @@ section {
   }
 
   .elastic-info h3 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
   }
 }

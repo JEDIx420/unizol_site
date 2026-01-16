@@ -64,10 +64,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.animate-fade-up').forEach(el => observer.observe(el));
 
-  // Elastic Cards Spotlight Effect
+  // Elastic Cards Logic
   const elasticCards = document.querySelectorAll('.elastic-card');
   if (elasticCards.length > 0) {
+    const removeActiveClasses = () => {
+      elasticCards.forEach(card => card.classList.remove('active'));
+    };
+
     elasticCards.forEach(card => {
+      // Expansion Logic: Only one active at a time
+      card.addEventListener('mouseenter', () => {
+        removeActiveClasses();
+        card.classList.add('active');
+      });
+
+      // Spotlight Effect
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -75,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.setProperty('--x', `${x}px`);
         card.style.setProperty('--y', `${y}px`);
       });
+
       card.addEventListener('mouseleave', () => {
         card.style.setProperty('--x', `50%`);
         card.style.setProperty('--y', `50%`);
