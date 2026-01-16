@@ -1383,8 +1383,10 @@ section {
 .stack-card {
   /* CORE MECHANIC: Creates the stack effect */
   position: sticky;
-  top: calc(120px + (var(--i) * 2rem));
-  /* Offset calculation for navbar + stacking */
+  top: calc(120px + (var(--i) * 3rem));
+  /* Increased offset for differentiation */
+  z-index: calc(10 + var(--i));
+  /* Explicit layering */
 
   /* Dimensions & Spacing */
   min-height: 450px;
@@ -1393,10 +1395,11 @@ section {
   padding: 4rem;
 
   /* Unizol Glassmorphism Style */
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.95);
+  /* More opacity to prevent bleed */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 32px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 
