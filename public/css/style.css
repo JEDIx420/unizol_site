@@ -408,75 +408,59 @@ section {
 }
 
 /* Page Header Premium (ZenRev Style) */
+/* Page Header Premium (ZenRev Style - Adjusted to White) */
 .header-premium {
-  background: #1e40af;
-  /* Fallback */
-  background:
-    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.4) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(30, 64, 175, 0.5) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.4) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(30, 64, 175, 0.5) 0px, transparent 50%),
-    linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-  padding: 10rem 0 12rem;
+  background: white;
+  padding: 10rem 0 8rem;
   text-align: center;
-  color: white;
+  color: var(--color-text-main);
   position: relative;
   overflow: hidden;
 }
 
+/* Removed ::before SVG pattern as it was for dark bg */
 .header-premium::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-  opacity: 0.2;
-  pointer-events: none;
+  display: none;
 }
 
+/* Removed ::after fade as it was for dark bg */
 .header-premium::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 150px;
-  background: linear-gradient(to bottom, transparent, var(--color-bg-light));
-  pointer-events: none;
+  display: none;
 }
 
 .header-badge {
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 1.25rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(59, 130, 246, 0.1);
+  /* Light blue bg */
   backdrop-filter: blur(4px);
   border-radius: 2rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: white;
+  color: var(--color-primary);
+  /* Blue text */
   margin-bottom: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .header-badge i {
-  color: #60a5fa;
-  /* Light blue accent */
+  color: var(--color-primary);
   font-size: 1rem;
 }
 
 .header-premium h1 {
   font-size: 4rem;
-  color: white;
+  color: var(--color-secondary);
+  /* Dark text */
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
   font-weight: 800;
 }
 
 .header-premium .section-subtext {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-muted);
+  /* Muted dark text */
   max-width: 700px;
   font-size: 1.25rem;
 }
