@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.animate-fade-up').forEach(el => observer.observe(el));
 
   // Hero Word Rotator
-  const words = ["Solutions", "Agents", "SDR", "Marketer", "Employee"];
+  const words = ["Agents", "Solutions", "Workflows"];
   let wordIndex = 0;
   const wordRotator = document.getElementById('word-rotator');
 
