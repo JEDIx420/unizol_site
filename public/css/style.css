@@ -1622,6 +1622,7 @@ section {
 }
 
 /* --- Content Layout --- */
+/* --- Content Layout --- */
 .elastic-content {
   position: absolute;
   top: 0;
@@ -1640,8 +1641,14 @@ section {
   visibility: hidden;
   transform: translateX(20px);
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  background: white;
-  /* Clean background for better visibility */
+
+  /* Desktop: Subtle Blue Lines Pattern */
+  background-color: white;
+  background-image: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 10px,
+      rgba(37, 99, 235, 0.03) 10px,
+      rgba(37, 99, 235, 0.03) 11px);
 }
 
 .elastic-card.active .elastic-content {
@@ -1658,18 +1665,8 @@ section {
 }
 
 .elastic-icon-wrapper {
-  width: 72px;
-  height: 72px;
-  background-color: var(--color-primary);
-  color: white;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
-  transition: transform 0.3s ease;
+  /* Desktop: Remove vector/icon completely */
+  display: none;
 }
 
 .elastic-card:hover .elastic-icon-wrapper {
@@ -1810,6 +1807,24 @@ section {
     padding: 2.5rem;
     position: relative;
     transform: none;
+    /* Mobile: Plain White Background (No Lines) */
+    background: white;
+    background-image: none;
+  }
+
+  /* Mobile: Restore Icon */
+  .elastic-icon-wrapper {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
   }
 
   .elastic-info h3 {
