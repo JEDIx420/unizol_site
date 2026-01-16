@@ -65,9 +65,10 @@
 body {
   font-family: var(--font-body);
   color: var(--color-text-main);
-  background-color: transparent;
-  /* Allow bg-fixed-wrapper to show */
-  /* background-image: var(--gradient-hero-bg); REMOVED for Premium Aurora */
+  background-color: var(--color-white);
+  /* ZenRev style vignette */
+  background-image: var(--gradient-hero-bg);
+  background-attachment: fixed;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
