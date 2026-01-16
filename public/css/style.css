@@ -1756,48 +1756,30 @@ section {
 /* --- Mobile Responsive --- */
 @media (max-width: 992px) {
   .elastic-section {
-    padding: 4rem 0;
-    /* Full width scroll, less vertical padding */
+    padding: 6rem 1.5rem;
     height: auto;
     min-height: auto;
-    overflow: hidden;
-    /* Prevent horizontal scroll on body */
   }
 
   .elastic-container {
     display: flex;
-    flex-direction: row;
-    /* Horizontal layout */
-    overflow-x: auto;
-    /* Scrollable */
-    scroll-snap-type: x mandatory;
-    /* Snap effect */
-    gap: 1.5rem;
-    padding: 0 1.5rem 2rem 1.5rem;
-    /* Padding for scroll hints */
+    flex-direction: column;
+    /* Vertical Stack */
     height: auto;
+    gap: 2rem;
+    /* Spacing between cards */
     width: 100%;
-    -webkit-overflow-scrolling: touch;
-    /* Smooth scroll on iOS */
-    scrollbar-width: none;
-    /* Hide scrollbar Firefox */
-  }
-
-  .elastic-container::-webkit-scrollbar {
-    display: none;
-    /* Hide scrollbar Chrome/Safari */
+    overflow: visible;
+    /* No internal scrolling */
   }
 
   .elastic-card {
-    min-width: 85vw;
-    /* Card takes up most of screen */
+    min-width: 100%;
+    /* Full width */
     height: auto;
-    min-height: 450px;
-    /* Fixed height for consistency */
+    min-height: auto;
     flex: none;
     border-radius: 24px;
-    scroll-snap-align: center;
-    /* Center snap */
     background: white;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -1805,14 +1787,14 @@ section {
     overflow: hidden;
   }
 
-  /* Disable Active State Expansion Logic on Mobile */
+  /* Disable Active State Logic - Always Expanded Visuals */
   .elastic-card.active {
     height: auto;
-    min-height: 450px;
+    min-height: auto;
     flex: none;
   }
 
-  /* Hide Large Number on Mobile (Content always visible) */
+  /* Hide Large Number on Mobile */
   .card-number {
     display: none;
   }
@@ -1829,10 +1811,8 @@ section {
   .elastic-info h3 {
     font-size: 1.75rem;
     white-space: normal;
-    /* Allow wrapping */
   }
 
-  /* Override any hidden details logic */
   .elastic-details {
     opacity: 1;
     max-height: none;
@@ -1840,22 +1820,4 @@ section {
     visibility: visible;
     margin-top: 1rem;
   }
-}
-
-padding: 2rem;
-position: relative;
-/* Reset position for mobile flow if needed, but absolute is fine inside relative card */
-}
-
-/* Content: Visible when Active */
-.elastic-card.active .elastic-content {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0.2s;
-  /* Wait for expansion */
-}
-
-.elastic-info h3 {
-  font-size: 1.8rem;
-}
 }
