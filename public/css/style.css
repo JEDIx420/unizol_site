@@ -1631,7 +1631,8 @@ section {
   padding: 4rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  /* Centered content, not pushed to bottom */
   z-index: 2;
 
   /* Hidden by default (Collapsed) */
@@ -1639,7 +1640,8 @@ section {
   visibility: hidden;
   transform: translateX(20px);
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  background: linear-gradient(to top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0) 100%);
+  background: white;
+  /* Clean background for better visibility */
 }
 
 .elastic-card.active .elastic-content {
@@ -1667,10 +1669,12 @@ section {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+  transition: transform 0.3s ease;
 }
 
 .elastic-card:hover .elastic-icon-wrapper {
-  transform: scale(1.05) rotate(3deg);
+  transform: scale(1.05);
+  /* Removed rotation to fix "skewed" look */
   background-color: var(--color-primary);
   color: white;
 }
