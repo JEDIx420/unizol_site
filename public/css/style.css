@@ -409,9 +409,10 @@ section {
 
 /* Page Header Premium (ZenRev Style) */
 /* Page Header Premium (ZenRev Style - Adjusted to White) */
+/* Page Header Premium (ZenRev Style - Adjusted to White) */
 .header-premium {
   background: white;
-  padding: 7rem 0 4rem;
+  padding: 9rem 0 2rem;
   text-align: center;
   color: var(--color-text-main);
   position: relative;
@@ -450,7 +451,7 @@ section {
 }
 
 .header-premium h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--color-secondary);
   /* Dark text */
   margin-bottom: 1.5rem;
@@ -467,7 +468,7 @@ section {
 
 /* Service Card Enhancements */
 .services-section-premium {
-  margin-top: -6rem;
+  margin-top: -3rem;
   position: relative;
   z-index: 10;
   padding-bottom: 8rem;
