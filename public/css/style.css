@@ -1329,3 +1329,161 @@ section {
   color: var(--color-primary) !important;
   font-weight: 600;
 }
+
+/* --- Stacking Section Layout --- */
+.stack-section {
+  padding: 8rem 1.5rem;
+  background-color: var(--color-bg-light);
+  position: relative;
+}
+
+.stack-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.stack-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.stack-header h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stack-header p {
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- The Sticky Card --- */
+.stack-card {
+  /* CORE MECHANIC: Creates the stack effect */
+  position: sticky;
+  top: calc(120px + (var(--i) * 2rem));
+  /* Offset calculation for navbar + stacking */
+
+  /* Dimensions & Spacing */
+  min-height: 450px;
+  margin-bottom: 6rem;
+  /* Spacing below to allow scrolling time */
+  padding: 4rem;
+
+  /* Unizol Glassmorphism Style */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+
+  /* Content Layout */
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.stack-card:last-child {
+  margin-bottom: 0;
+}
+
+/* Content Styling */
+.stack-card-body {
+  position: relative;
+  z-index: 2;
+}
+
+.stack-number {
+  display: block;
+  font-weight: 800;
+  font-size: 5rem;
+  color: var(--color-primary);
+  opacity: 0.05;
+  line-height: 1;
+  position: absolute;
+  top: -2rem;
+  left: -1rem;
+  z-index: -1;
+}
+
+.stack-card h3 {
+  font-size: 2.5rem;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.stack-card p {
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.stack-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: gap 0.3s ease;
+}
+
+.stack-btn:hover {
+  gap: 0.8rem;
+}
+
+/* Visual Icon Side */
+.stack-card-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.05), transparent 70%);
+  border-radius: 24px;
+  font-size: 12rem;
+  color: var(--color-primary);
+  opacity: 0.8;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .stack-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 3rem 2rem;
+    gap: 2rem;
+  }
+
+  .stack-card-visual {
+    font-size: 8rem;
+    order: -1;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stack-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .stack-card {
+    top: calc(85px + (var(--i) * 1rem));
+    padding: 2.5rem 1.5rem;
+  }
+
+  .stack-card-visual {
+    display: none;
+  }
+
+  .stack-card h3 {
+    font-size: 2rem;
+  }
+}
