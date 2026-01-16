@@ -1770,36 +1770,52 @@ section {
     height: 100px;
     flex: none;
     border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    background: white;
+    overflow: hidden;
+    /* Ensure content doesn't bleed */
+    position: relative;
   }
 
-  .elastic-card:hover,
+  /* Active State (Expanded) */
   .elastic-card.active {
     height: auto;
     min-height: 500px;
+    flex: none;
   }
 
+  /* Card Number: Visible when Collapsed */
   .card-number {
-    font-size: 2.5rem;
-    left: 2rem;
+    font-size: 3rem;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     opacity: 0.3;
+    transition: all 0.3s ease;
   }
 
+  /* Hide Number when Active */
   .elastic-card.active .card-number {
     opacity: 0;
-    transform: translateY(-50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.5);
   }
 
+  /* Content: Hidden when Collapsed */
   .elastic-content {
-    padding: 2.5rem;
-    background: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 2rem;
     position: relative;
-    height: auto;
+    /* Reset position for mobile flow if needed, but absolute is fine inside relative card */
+  }
+
+  /* Content: Visible when Active */
+  .elastic-card.active .elastic-content {
     opacity: 1;
-    /* Always visible on mobile active/hover due to height expansion */
     visibility: visible;
-    transform: none;
+    transition-delay: 0.2s;
+    /* Wait for expansion */
   }
 
   .elastic-info h3 {
