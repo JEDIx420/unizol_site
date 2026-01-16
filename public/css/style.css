@@ -2100,4 +2100,168 @@ section {
     filter: grayscale(0%) opacity(1);
     color: var(--color-primary);
     transform: scale(1.1);
+}/* --- Agents Page Grid & Cards --- */
+.agents-section {
+    background-color: #f8fafc;
+    /* Very light grey background for contrast with white cards */
+}
+
+.agents-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 992px) {
+    .agents-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Blueprint Card */
+.blueprint-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    /* Keeps buttons inside radius */
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.blueprint-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.1);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.blueprint-card .icon-lg {
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+}
+
+/* Badge for "For Founders", etc. */
+.target-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: #f1f5f9;
+    color: #64748b;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+}
+
+.blueprint-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+.blueprint-card p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+/* Tech Stack Pills */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.stack-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #475569;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+}
+
+.stack-item i {
+    color: var(--color-primary);
+}
+
+/* --- Dual-CTA Footer (Split Actions) --- */
+.card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    /* Primary button is wider */
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Secondary Button (Download) */
+.blueprint-card .btn-secondary {
+    background: #f8fafc;
+    color: #475569;
+    text-align: center;
+    padding: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 0;
+    /* Reset generic btn styles */
+}
+
+.blueprint-card .btn-secondary:hover {
+    background: #e2e8f0;
+    color: var(--color-secondary);
+}
+
+/* Primary Button (Deploy) */
+.blueprint-card .btn-primary {
+    background: var(--color-secondary);
+    /* Dark Navy default */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s;
+    border: none;
+    border-radius: 0;
+    /* Reset generic btn styles */
+    box-shadow: none;
+}
+
+.blueprint-card .btn-primary:hover {
+    background: var(--color-primary);
+    /* Bright Blue on Hover */
+    transform: none;
+    /* Disable generic button lift */
 }
