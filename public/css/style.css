@@ -1951,317 +1951,321 @@ section {
   font-size: 1.25rem;
   margin-top: 0.15rem;
   flex-shrink: 0;
-}/* --- Why Work With Us (Bento Grid) --- */
+}
+
+/* --- Why Work With Us (Bento Grid) --- */
 .why-us-section {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .bento-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    /* Mobile First: Stacked */
-    gap: 1.5rem;
-    margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Mobile First: Stacked */
+  gap: 1.5rem;
+  margin-bottom: 4rem;
 }
 
 .bento-card {
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 2.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .bento-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-primary);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.1);
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.1);
 }
 
 .bento-card .icon-lg {
-    font-size: 3rem;
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
 }
 
 .bento-card .icon-md {
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
 }
 
 .bento-card h3 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 700;
-    color: #1e293b;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .bento-card p {
-    color: #64748b;
-    line-height: 1.6;
-    font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 1.05rem;
 }
 
 /* Tall Card Specifics */
 .card-tall {
-    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
 }
 
 .watermark-number {
-    position: absolute;
-    bottom: -20px;
-    right: -10px;
-    font-size: 8rem;
-    font-weight: 800;
-    color: rgba(0, 0, 0, 0.03);
-    pointer-events: none;
-    line-height: 1;
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+  font-size: 8rem;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.03);
+  pointer-events: none;
+  line-height: 1;
 }
 
 /* Desktop Logic */
 @media (min-width: 992px) {
-    .bento-grid {
-        grid-template-columns: 1fr 1fr;
-        /* Desktop: 2 Columns */
-        grid-auto-rows: 1fr;
-        /* Equal height rows */
-        align-items: stretch;
-    }
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+    /* Desktop: 2 Columns */
+    grid-auto-rows: 1fr;
+    /* Equal height rows */
+    align-items: stretch;
+  }
 
-    /* Make the Tall Card fill height */
-    .card-tall {
-        height: 100%;
-        justify-content: space-between;
-    }
+  /* Make the Tall Card fill height */
+  .card-tall {
+    height: 100%;
+    justify-content: space-between;
+  }
 
-    .bento-col-right {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        height: 100%;
-    }
+  .bento-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+  }
 
-    .bento-col-right .bento-card {
-        flex: 1;
-        /* Both cards take equal height */
-    }
+  .bento-col-right .bento-card {
+    flex: 1;
+    /* Both cards take equal height */
+  }
 }
 
 /* --- Marquee Animation --- */
 .marquee-wrapper {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    padding: 2rem 0;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 2rem 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .marquee-track {
-    display: inline-flex;
-    gap: 6rem;
-    animation: scroll 30s linear infinite;
-    padding-left: 100%;
-    /* Start off-screen */
+  display: inline-flex;
+  gap: 6rem;
+  animation: scroll 30s linear infinite;
+  padding-left: 100%;
+  /* Start off-screen */
 }
 
 .marquee-wrapper:hover .marquee-track {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    100% {
-        transform: translateX(-100%);
-    }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .client-logo {
-    font-size: 2.5rem;
-    /* Icon size as logo placeholder */
-    color: #94a3b8;
-    filter: grayscale(100%) opacity(0.6);
-    transition: all 0.3s ease;
-    cursor: pointer;
+  font-size: 2.5rem;
+  /* Icon size as logo placeholder */
+  color: #94a3b8;
+  filter: grayscale(100%) opacity(0.6);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .client-logo:hover {
-    filter: grayscale(0%) opacity(1);
-    color: var(--color-primary);
-    transform: scale(1.1);
-}/* --- Agents Page Grid & Cards --- */
+  filter: grayscale(0%) opacity(1);
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+/* --- Agents Page Grid & Cards --- */
 .agents-section {
-    background-color: #f8fafc;
-    /* Very light grey background for contrast with white cards */
+  background-color: #f8fafc;
+  /* Very light grey background for contrast with white cards */
 }
 
 .agents-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
 }
 
 @media (min-width: 992px) {
-    .agents-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .agents-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Blueprint Card */
 .blueprint-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    overflow: hidden;
-    /* Keeps buttons inside radius */
-    height: 100%;
-    transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  /* Keeps buttons inside radius */
+  height: 100%;
+  transition: all 0.3s ease;
 }
 
 .blueprint-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-primary);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.1);
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.1);
 }
 
 .card-body {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .card-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
 }
 
 .blueprint-card .icon-lg {
-    font-size: 2.5rem;
-    color: var(--color-secondary);
+  font-size: 2.5rem;
+  color: var(--color-primary);
 }
 
 /* Badge for "For Founders", etc. */
 .target-badge {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    background-color: #f1f5f9;
-    color: #64748b;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #f1f5f9;
+  color: #64748b;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
 }
 
 .blueprint-card h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
 }
 
 .blueprint-card p {
-    color: #64748b;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 1rem;
 }
 
 /* Tech Stack Pills */
 .tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
 }
 
 .stack-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #475569;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #475569;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
 }
 
 .stack-item i {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 /* --- Dual-CTA Footer (Split Actions) --- */
 .card-actions {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    /* Primary button is wider */
-    border-top: 1px solid #e2e8f0;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  /* Primary button is wider */
+  border-top: 1px solid #e2e8f0;
 }
 
 /* Secondary Button (Download) */
 .blueprint-card .btn-secondary {
-    background: #f8fafc;
-    color: #475569;
-    text-align: center;
-    padding: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: background 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    border: none;
-    border-radius: 0;
-    /* Reset generic btn styles */
+  background: #f8fafc;
+  color: #475569;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 0;
+  /* Reset generic btn styles */
 }
 
 .blueprint-card .btn-secondary:hover {
-    background: #e2e8f0;
-    color: var(--color-secondary);
+  background: #e2e8f0;
+  color: var(--color-secondary);
 }
 
 /* Primary Button (Deploy) */
 .blueprint-card .btn-primary {
-    background: var(--color-secondary);
-    /* Dark Navy default */
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: background 0.2s;
-    border: none;
-    border-radius: 0;
-    /* Reset generic btn styles */
-    box-shadow: none;
+  background: var(--color-secondary);
+  /* Dark Navy default */
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s;
+  border: none;
+  border-radius: 0;
+  /* Reset generic btn styles */
+  box-shadow: none;
 }
 
 .blueprint-card .btn-primary:hover {
-    background: var(--color-primary);
-    /* Bright Blue on Hover */
-    transform: none;
-    /* Disable generic button lift */
+  background: var(--color-primary);
+  /* Bright Blue on Hover */
+  transform: none;
+  /* Disable generic button lift */
 }
