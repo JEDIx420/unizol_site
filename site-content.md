@@ -14,79 +14,57 @@ This document classifies all text content on the site by **Page**, **Section**, 
     *   "Schedule Audit" (Hero)
     *   "View Case Studies" (Hero)
 
-### **The Unizol Framework (Stack Section)**
-*   **Section Header:** "The Unizol Framework"
+#### Card 1: Sales (GTM)
+*   **Headline:** "Autonomous Sales Agents"
+*   **Body Text:** "Stop burning cash on generic cold emails. We deploy intelligent SDR agents that research prospects across the web, analyze buying intent, and craft hyper-personalized outreach to fill your calendar with qualified leads automatically."
+*   **ROI Bullets:**
+    *   "Reduce Customer Acquisition Cost (CAC) by 40%"
+    *   "Increase pipeline velocity with 24/7 prospecting"
+*   **Link Text:** "Explore Sales Solutions"
 
-#### Card 1: Solutions
-*   **Headline:** "Ecosystems for Infinite Scale"
-*   **Body Text:** "We don't just build tools; we architect autonomous ecosystems. Our solutions sit at the intersection of private data and proprietary logic, ensuring your business intelligence remains sovereign while your output grows exponentially."
-*   **Features:**
-    *   "Private Infrastructure"
-    *   "Custom Data RAG"
-*   **Button:** "Explore Solutions"
+#### Card 2: Marketing (Media)
+*   **Headline:** "Automated Content Studio"
+*   **Body Text:** "Scale your brand presence without the agency retainer. Our media agents learn your unique voice to generate studio-grade video, audio, and written assets, turning single ideas into massive multi-channel campaigns instantly."
+*   **ROI Bullets:**
+    *   "10x content output with zero headcount increase"
+    *   "Cut production costs by 80% vs traditional methods"
+*   **Link Text:** "Explore Media Solutions"
 
-#### Card 2: Agents
-*   **Headline:** "Intelligence that Acts, Not Just Asks"
-*   **Body Text:** "Unizol agents are engineered with high-fidelity reasoning paths. Unlike traditional LLM wrappers, our agents hold state, use tools, and coordinate with other agents in complex swarms to solve multi-step business problems."
-*   **Features:**
-    *   "State-Aware Logic"
-    *   "Multi-Agent Swarms"
-*   **Button:** "View Agents"
-
-#### Card 3: GTM (SDR)
-*   **Headline:** "The Sales Outbound That Never Sleeps"
-*   **Body Text:** "Deploy a virtual sales team that researches every prospect before hitting 'Send'. Our SDR agents analyze 10-Ks, LinkedIn profiles, and news feeds to ensure every interaction is high-signal."
-*   **Features:**
-    *   "Intent Signal Tracking"
-    *   "CRM Automation"
-*   **Button:** "Explore GTM"
-
-#### Card 4: Media (Marketer)
-*   **Headline:** "Content Engines for Massive Presence"
-*   **Body Text:** "Scale your brand across every platform without increasing your head-count. Unizol's Marketing agents generate studio-grade media, manage distribution, and optimize ad spend in real-time."
-*   **Features:**
-    *   "Gen-Media Studio"
-    *   "Social Auto-Distribution"
-*   **Button:** "Explore Studio"
-
-#### Card 5: Ops (Employee)
-*   **Headline:** "The New Digital Workforce Standard"
-*   **Body Text:** "Augment your team with employees that learn your internal processes in minutes. Integrate your SOPs directly into the agentic brain to handle back-office tasks and data entry with 0% error rate."
-*   **Features:**
-    *   "SOP Learning Engine"
-    *   "24/7 Availability"
-*   **Button:** "View Architecture"
+#### Card 3: Operations (Architecture)
+*   **Headline:** "Secure Workflow Automation"
+*   **Body Text:** "Remove bottlenecks from your back office. We architect private, secure agent swarms that digest your internal SOPs to handle complex data entry, support, and compliance tasks with absolute precision and data privacy."
+*   **ROI Bullets:**
+    *   "Eliminate 90% of manual processing errors"
+    *   "Reclaim 1,000+ hours of employee time annually"
+*   **Link Text:** "Explore Ops Solutions"
 
 ### **The Unizol Agentic Engine (Elastic Section)**
 *   **Section Header:** "The Unizol Agentic Engine"
 *   **Subtext:** "Our core high-performance frameworks."
 
-#### Card 1: GTM
-*   **Headline:** "Precision GTM Engineering"
-*   **Body Text:** "Stop blasting generic spam. We build autonomous sales engines that deeply research every single prospect to craft hyper-personalized, relevant messaging."
-*   **Features:**
-    *   "Deep Prospect Research"
-    *   "Automated 1:1 Outreach"
-    *   "Pipeline Acceleration"
-*   **Button:** "Explore GTM"
+#### Card 1: The Audit
+*   **Headline:** "01. Strategic Audit"
+*   **Body Text:** "We don't guess. We start by mapping your actual workflows to find exactly where manual tasks are slowing you down. We identify the specific high-value bottlenecks that are actually worth solving."
+*   **Key Actions:**
+    *   "Identify expensive bottlenecks"
+    *   "Define clear success metrics"
+*   **Link Text:** "Book an Audit"
 
-#### Card 2: Media
-*   **Headline:** "Generative Media Studio"
-*   **Body Text:** "Dominate every channel without a Hollywood budget. We produce studio-quality videos, podcast-style audio, and creative ads using advanced AI."
-*   **Features:**
-    *   "AI Video & Podcast Production"
-    *   "Multi-Format Content Scaling"
-    *   "Narrative Fine-Tuning"
-*   **Button:** "View Studio"
+#### Card 2: The Architecture
+*   **Headline:** "02. Bespoke Design"
+*   **Body Text:** "We design a system that fits your rules, not a generic template. We select the right technology stack to ensure your data stays secure and the logic is error-proof before a single line of code is written."
+*   **Key Actions:**
+    *   "Select the right tech stack"
+    *   "Blueprint secure data flows"
+*   **Link Text:** "View Tech Stack"
 
-#### Card 3: Architecture
-*   **Headline:** "Bespoke Agent Architecture"
-*   **Body Text:** "Own your intelligence. We architect custom AI agents using advanced frameworks (LangChain, AG2), deployed securely on your own private infrastructure."
-*   **Features:**
-    *   "LangChain & AG2 Development"
-    *   "Secure Data Sovereignty"
-    *   "Multi-Agent Orchestration"
-*   **Button:** "See Specs"
+#### Card 3: The Build
+*   **Headline:** "03. Precision Build"
+*   **Body Text:** "We execute in rapid sprints, combining human oversight with automated speed. We rigorously test the system against real-world scenarios to ensure it is reliable and stable before we hand over the keys."
+*   **Key Actions:**
+    *   "Rapid 3-week delivery sprints"
+    *   "Full ownership handoff"
+*   **Link Text:** "Start the Build"
 
 ### **Process Section**
 *   **Headline:** "Engineering Real Value"

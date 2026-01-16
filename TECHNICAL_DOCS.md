@@ -40,8 +40,9 @@ UnizolNewSite/
 
 ### 1. Design System (`public/css/style.css`)
 - **Variables**: Centered around a premium "ZenRev" aesthetic using Deep Blues (`#1e40af`, `#3b82f6`) and Clean Whites.
-- **Mesh Gradients**: Advanced radial-gradient compositions used in `.header-premium` for depth and blur effects.
-- **Glassmorphism**: Extensive use of `backdrop-filter: blur()` and semi-transparent backgrounds for cards and the navbar.
+- **Header Consistency**: Subpages (`services`, `agents`, etc.) use a clean white header theme (`.header-premium`) to match the homepage lightness.
+- **Stack Card Layout**: Implements a "flush stacking" effect using `position: sticky` with a fixed `top` value, ensuring cards slide directly over one another.
+- **Solid Occlusion**: Cards use solid white backgrounds (`#ffffff`) to ensure complete occlusion of underlying content, replacing previous semi-transparent glassmorphism.
 
 ### 2. Micro-interactions (`src/main.js`)
 - **Word Rotator**: A JavaScript-driven text switcher for the hero section with smooth translateY/opacity transitions.
