@@ -1395,11 +1395,11 @@ section {
   padding: 4rem;
 
   /* Unizol Glassmorphism Style */
-  background: rgba(255, 255, 255, 0.95);
-  /* More opacity to prevent bleed */
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: #ffffff;
+  /* Solid white to prevent bleed-through */
+  /* backdrop-filter removed as it's unnecessary with solid bg */
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  /* Subtle blue border to match theme */
   border-radius: 32px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 
