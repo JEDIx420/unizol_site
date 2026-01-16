@@ -1827,4 +1827,125 @@ section {
     visibility: visible;
     margin-top: 1rem;
   }
+}/* --- ROI Grid Section --- */
+.roi-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .roi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .roi-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.roi-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.roi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+}
+
+.roi-content-visible {
+    text-align: left;
+}
+
+.roi-content-visible .icon-lg {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.roi-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat-highlight {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1.1;
+    margin: 0;
+}
+
+.stat-label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #64748b;
+    margin-top: 0.5rem;
+}
+
+/* Reveal Mechanism: Slide Up Overlay */
+.roi-content-hidden {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    padding: 2rem;
+    transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-top: 4px solid var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.roi-card.active .roi-content-hidden {
+    top: 0;
+}
+
+.roi-content-hidden ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.roi-content-hidden ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #334155;
+    line-height: 1.5;
+}
+
+.roi-content-hidden ul li:last-child {
+    margin-bottom: 0;
+}
+
+.roi-content-hidden ul li i {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
 }

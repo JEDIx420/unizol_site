@@ -120,5 +120,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 400);
     }, 3000);
   }
+  // ROI Grid Logic (Bento Style)
+  const roiCards = document.querySelectorAll('.roi-card');
+  if (roiCards.length > 0) {
+    roiCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        // Toggle active state
+        const isActive = card.classList.contains('active');
+
+        // Close all others
+        roiCards.forEach(c => c.classList.remove('active'));
+
+        // If it wasn't active before, open it now
+        if (!isActive) {
+          card.classList.add('active');
+        }
+      });
+
+      // Accessibility: Enter key triggers click
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+  }
 });
 
