@@ -1191,9 +1191,13 @@ section {
     transform: none !important;
     border-radius: 0 0 15px 15px;
     padding: 0.75rem 1.5rem;
-    border-top: none;
-    border-left: none;
     border-right: none;
+  }
+
+  /* CRITICAL FIX: Prevent hover shift on mobile touch */
+  .navbar.glass-card:hover {
+    transform: none !important;
+    box-shadow: var(--shadow-lg);
   }
 
   .navbar-content {
@@ -1209,6 +1213,10 @@ section {
   .mobile-menu-btn {
     display: block;
     font-size: 1.75rem;
+    z-index: 1005;
+    /* Ensure above overlay */
+    position: relative;
+    /* Context for z-index */
   }
 
   /* Nav Overlay */
